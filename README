@@ -1,0 +1,3 @@
+This script is helpful for continuous monitoring of background processes on a server.
+
+This script determines whether a process (or multiple processes) are dead or alive.  It then takes an action depending on whether the process is dead or alive, or whether a certain fraction are dead or alive.
