@@ -1,3 +1,16 @@
 This script is helpful for continuous monitoring of background processes on a server.
 
 This script determines whether a process (or multiple processes) are dead or alive.  It then takes an action depending on whether the process is dead or alive, or whether a certain fraction are dead or alive.
+
+   Basic usage:
+   ./dead_or_alive.py 1378 -d "echo dead" -a "echo alive"
+  
+   Run the dead command only if multiple pids are dead:
+   ./dead_or_alive.py 1378 1391 -d "echo dead" -a "echo alive"
+  
+   Check pids from a file:
+   ./dead_or_alive.py $(cat pids.txt) -d "echo dead" -a "echo alive"
+  
+   Check pids from a file, and only consider it alive if at least 25% of them are alive:
+   ./dead_or_alive.py $(cat pids.txt) -d "echo dead" -a "echo alive" -t 0.25
+  
